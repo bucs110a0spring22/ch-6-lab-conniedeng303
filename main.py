@@ -1,5 +1,4 @@
 import turtle 
-import math
 
 window = turtle.Screen()
 myturtle = turtle.Turtle()
@@ -13,7 +12,7 @@ def setupWindowTurtles(myturtle=None,myturtle_writer=None, window=None,max_so_fa
   myturtle.goto(0,0)
   myturtle.pendown()
   myturtle_writer.pendown()
-  myturtle_writer.clear
+  myturtle_writer.clear()
   max_so_far = 0
   window.setworldcoordinates(0,0,upperend_bound+10,max_so_far+10)
   myturtle_writer.goto(0,max_so_far+10)
@@ -50,16 +49,12 @@ def main():
   window.setworldcoordinates(0,0,10,10)
   upperend_bound = int(input("What positive value do you want?"))
   if 0<upperend_bound:
-      for start in range(1,upperend_bound+1):
-        seq3np1(start)
-        print("Current Loop Value:", start ,"and Number of Iterations:",seq3np1(start)) 
+    for start in range(1,upperend_bound+1):
+      seq3np1(start)
+      print("Current Loop Value:", start ,"and Number of Iterations:",seq3np1(start)) 
   else:
     quit()
   upperboundgraph(0,0)
   setupWindowTurtles(myturtle,myturtle_writer,window,0,0)
 
-  
-  
-  
 main()
-
