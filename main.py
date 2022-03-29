@@ -8,6 +8,11 @@ myturtle.speed(0)
 myturtle_writer.speed(0)
 
 def setupWindowTurtles(myturtle=None,myturtle_writer=None, window=None,max_so_far=0,upperend_bound = 0):
+  myturtle.clear()
+  myturtle_writer.clear()
+  myturtle.goto(0,0)
+  myturtle.pendown()
+  myturtle_writer.pendown()
   myturtle_writer.clear
   max_so_far = 0
   window.setworldcoordinates(0,0,upperend_bound+10,max_so_far+10)
@@ -42,6 +47,7 @@ def seq3np1(n):
 
 
 def main():
+  window.setworldcoordinates(0,0,10,10)
   upperend_bound = int(input("What positive value do you want?"))
   if 0<upperend_bound:
       for start in range(1,upperend_bound+1):
@@ -51,6 +57,7 @@ def main():
     quit()
   upperboundgraph(0,0)
   setupWindowTurtles(myturtle,myturtle_writer,window,0,0)
+
   
   
   
