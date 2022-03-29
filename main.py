@@ -18,6 +18,7 @@ def setupWindowTurtles(myturtle=None,myturtle_writer=None, window=None,max_so_fa
   myturtle_writer.goto(0,max_so_far+10)
   for i in (1,upperend_bound+1):    
     myturtle.goto(i,seq3np1(i))
+  myturtle_writer.write("Maximum so far:" + str(max_so_far), font=("Arial",8,"normal"))
   
 #PartB
 def upperboundgraph(upperend_bound = 0, count = 0):
@@ -42,9 +43,6 @@ def seq3np1(n):
     count+=1
   return count
 
-#myturtle_writer.write("Maximum so far:"max_so_far, font=Arial,8,normal)
-
-
 def main():
   window.setworldcoordinates(0,0,10,10)
   upperend_bound = int(input("What positive value do you want?"))
@@ -56,5 +54,7 @@ def main():
     quit()
   upperboundgraph(0,0)
   setupWindowTurtles(myturtle,myturtle_writer,window,0,0)
+  window.exitonclick()
 
+  
 main()
