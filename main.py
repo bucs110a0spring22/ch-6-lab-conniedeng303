@@ -6,29 +6,30 @@ myturtle_writer = turtle.Turtle()
 myturtle.speed(0)
 myturtle_writer.speed(0)
 
-def setupWindowTurtles(myturtle=None,myturtle_writer=None, window=None,max_so_far=0,upperend_bound = 0):
+def setupWindowTurtles(myturtle=None,myturtle_writer=None,window = None, upperend_bound = 0):
   myturtle.clear()
   myturtle_writer.clear()
+  myturtle.penup()
+  myturtle_writer.penup()
   myturtle.goto(0,0)
+  myturtle_writer.goto(0,0)
   myturtle.pendown()
-  myturtle_writer.pendown()
-  myturtle_writer.clear()
-  max_so_far = 0
-  window.setworldcoordinates(0,0,upperend_bound+10,max_so_far+10)
-  myturtle_writer.goto(0,max_so_far+10)
-  for i in (1,upperend_bound+1):    
-    myturtle.goto(i,seq3np1(i))
-  myturtle_writer.write("Maximum so far:" + str(max_so_far), font=("Arial",8,"normal"))
   
-#PartB
-def upperboundgraph(upperend_bound = 0, count = 0):
+def graph_data(myturtle=None,myturtle_writer=None,window=None,upperend_bound=0):
   max_so_far = 0
   for i in (1,upperend_bound+1):
-    seq3np1(i)
-    result = seq3np1(upperend_bound+1,)
-    max_so_far += 1
-  if max_so_far < result:
-    max_so_far = result
+    myturtle.clear()
+    myturtle_writer.clear()
+    max_so_far = seq3np1(i)
+    result = seq3np1(i)
+    myturtle.pendown()
+    myturtle.goto(i,seq3np1(i))
+    if max_so_far < result:
+      max_so_far = result
+      myturtle_writer.pendown()
+      myturtle_writer.goto(0,max_so_far)
+      myturtle_writer.write("Maximum so far:"+"<"+ str(i)+">,<"+str(max_so_far)+">", align = "left", font=("Arial",8,"normal"))
+  window.setworldcoordinates(0,0,i+10,max_so_far+10)
     
 #PARTA
 def seq3np1(n):
@@ -40,20 +41,18 @@ def seq3np1(n):
     else:                 # n is odd
       n = n * 3 + 1
       count += 1 # the last print is 1
-    count+=1
   return count
 
 def main():
+  setupWindowTurtles(myturtle,myturtle_writer,window,upperend_bound=0)
   window.setworldcoordinates(0,0,10,10)
   upperend_bound = int(input("What positive value do you want?"))
   if 0<upperend_bound:
     for start in range(1,upperend_bound+1):
-      seq3np1(start)
       print("Current Loop Value:", start ,"and Number of Iterations:",seq3np1(start)) 
   else:
     quit()
-  upperboundgraph(0,0)
-  setupWindowTurtles(myturtle,myturtle_writer,window,0,0)
+  graph_data(myturtle,myturtle_writer,window,0)
   window.exitonclick()
 
   
