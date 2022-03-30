@@ -14,22 +14,24 @@ def setupWindowTurtles(myturtle=None,myturtle_writer=None,window = None, upperen
   myturtle.goto(0,0)
   myturtle_writer.goto(0,0)
   myturtle.pendown()
+  myturtle_writer.pendown()
   
 def graph_data(myturtle=None,myturtle_writer=None,window=None,upperend_bound=0):
+  setupWindowTurtles(myturtle,myturtle_writer,window,upperend_bound=0)
   max_so_far = 0
-  for i in (1,upperend_bound+1):
+  for start in (1,upperend_bound+1):
     myturtle.clear()
     myturtle_writer.clear()
-    max_so_far = seq3np1(i)
-    result = seq3np1(i)
+    result = seq3np1(start)
     myturtle.pendown()
-    myturtle.goto(i,seq3np1(i))
+    myturtle_writer.pendown()
+    myturtle.goto(start,seq3np1(start))
     if max_so_far < result:
       max_so_far = result
-      myturtle_writer.pendown()
-      myturtle_writer.goto(0,max_so_far)
-      myturtle_writer.write("Maximum so far:"+"<"+ str(i)+">,<"+str(max_so_far)+">", align = "left", font=("Arial",8,"normal"))
-  window.setworldcoordinates(0,0,i+10,max_so_far+10)
+  myturtle_writer.pendown()
+  myturtle_writer.goto(0,max_so_far)
+  myturtle_writer.write("Maximum so far:"+"<"+ str(start)+">,<"+str(max_so_far)+">", align = "left", font=("Arial",8,"normal"))
+  window.setworldcoordinates(0,0,start+10,max_so_far+10)
     
 #PARTA
 def seq3np1(n):

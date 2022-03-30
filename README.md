@@ -8,7 +8,7 @@
 _Replace anything surrounded by the `< >` symbols._
 
 ## SUMMARY:
- < Provide a short description of your program's functionality. No more than a couple sentences. >
+ < I first created setupWindowsTurtles to set up the turtles,windows, and set the turtles at origin points. I created the graph_data function for the turtles to get the points to move to, and I combined those functions to create a main function that would allow for the graph to occur. >
 
 ## GRACE DAYS
 Grace days used for this assignment: < 1 >
