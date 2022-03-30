@@ -8,7 +8,7 @@
 _Replace anything surrounded by the `< >` symbols._
 
 ## SUMMARY:
- < I first created setupWindowsTurtles to set up the turtles,windows, and set the turtles at origin points. I created the graph_data function for the turtles to get the points to move to, and I combined those functions to create a main function that would allow for the graph to occur. >
+ < I first created the function graph_Data to set up the turtles,window,and coordinates.Using the parameter, upperend_bound, I set the range from 1 to upperend_bound for the sequence function, gave the points for the graph. In addition, I set max_so_far to 0, and then used if else statement to determine if result is greater than max_so_far, max_so_far would assume that value.I then used this number for myturtle_writer to write the max iterations so far.>
 
 ## GRACE DAYS
 Grace days used for this assignment: < 1 >
